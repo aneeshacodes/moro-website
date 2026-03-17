@@ -1,0 +1,71 @@
+
+<html>
+<head>
+<title>Order Form</title>
+</head>
+<link rel="stylesheet" href="style.css">
+
+<body style="background-color:#F7F6E5;">
+<marquee class="marq" direction="right" scrollamount="6">
+Buy 1 Get 1 free sale is live. HURRY UP!!
+</marquee>
+<table class="titlebox">
+
+<tr>
+<td width=95% class="title"><a href="homepage.html">MORO</a></td>
+<td width="5%">
+<a href="carttable.html">
+<img src="cart.svg" width="40px" style="cursor:pointer;">
+</a>
+</td>
+
+</table>
+<hr>
+<h2 align="center">Place Your Order 🧾</h2>
+
+<br>
+
+<form>
+
+Name:<br>
+<input type="text" id="name"><br><br>
+
+Phone Number:<br>
+<input type="text" id="phone"><br><br>
+
+Address:<br>
+<textarea id="address"></textarea><br><br>
+
+<button type="button" class="cartbutton" onclick="submitOrder()">Submit Order</button>
+
+</form>
+
+<script>
+
+function submitOrder()
+{
+    let name = document.getElementById("name").value;
+    let phone = document.getElementById("phone").value;
+    let address = document.getElementById("address").value;
+
+    if(name == "" || phone == "" || address == "")
+    {
+        alert("Please fill all details ❌");
+    }
+    else
+    {
+        alert("Order placed successfully 🎉");
+
+        // clear cart after order
+        localStorage.removeItem("names");
+        localStorage.removeItem("prices");
+
+        // go back to homepage
+        window.location.href = "homepage.html";
+    }
+}
+
+</script>
+
+</body>
+</html>

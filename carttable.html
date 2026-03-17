@@ -1,0 +1,91 @@
+<html>
+<head>
+<title>Cart</title>
+</head>
+<link rel="stylesheet" href="style.css">
+<body bgcolor="#F7F6E5">
+<marquee class="marq" direction="right" scrollamount="6">
+Buy 1 Get 1 free sale is live. HURRY UP!!
+</marquee>
+<table class="titlebox">
+
+<tr>
+<td width=95% class="title"><a href="homepage.html">MORO</a></td>
+<td width="5%">
+<a href="carttable.html">
+<img src="cart.svg" width="40px" style="cursor:pointer;">
+</a>
+</td>
+
+</table>
+<hr>
+<h2 style="text-align:center;font-family:Poppins;">Your Cart 🛒</h2>
+
+<div id="cartBox" style="border:1px solid black; padding:10px; margin-bottom:10px;"></div>
+
+<h3 id="total"></h3>
+
+<button onclick="window.location.href='order.html'" class="cartbutton">
+Place Order
+</button><br><br>
+<button class="cartbutton" onclick="clearCart()">Clear Cart</button>
+
+<script>
+
+function showCart()
+{
+    let names = localStorage.getItem("names");
+    let prices = localStorage.getItem("prices");
+
+    if(names == null || names == "")
+    {
+        document.getElementById("cartBox").innerHTML = "Cart is empty";
+        return;
+    }
+
+    let nameArray = names.split(",");
+    let priceArray = prices.split(",");
+
+    let text = "";
+    let total = 0;
+
+    for(let i = 0; i < nameArray.length - 1; i++)
+    {
+        text = text + nameArray[i] + " - ₹" + priceArray[i] + "<br>";
+        total = total + Number(priceArray[i]);
+    }
+
+    document.getElementById("cartBox").innerHTML = text;
+    document.getElementById("total").innerHTML = "Total = ₹" + total;
+}
+
+function clearCart()
+{
+    localStorage.removeItem("names");
+    localStorage.removeItem("prices");
+    location.reload();
+}
+
+function placeOrder()
+{
+    let names = localStorage.getItem("names");
+
+    if(names == null || names == "")
+    {
+        alert("Cart is empty ❌");
+    }
+    else
+    {
+        alert("Order placed successfully 🎉");
+        localStorage.removeItem("names");
+        localStorage.removeItem("prices");
+        location.reload();
+    }
+}
+
+showCart();
+
+</script>
+
+</body>
+</html>

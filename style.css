@@ -1,0 +1,84 @@
+body
+{
+background-color: #F7F6E5;
+}
+.title a
+{
+color:black;
+font-weight:bold;
+font-family:Poppins;
+font-size:50px;
+text-align:center;
+text-decoration: none;
+}
+.titlebox
+{
+
+margin-bottom:30px;
+}
+.marq
+{
+font-size:25px;
+background-color:black;
+padding:5px;
+color:white;
+font-family:Roboto;
+font-weight:bold;
+letter-spacing:1px;
+margin-bottom:15px;
+}
+.categories
+{
+background-color:black;
+width:100%;
+padding:10px;
+margin-bottom:15px;
+}
+.category-name a
+{
+font-family:Poppins;
+text-align:center;
+font-size:30px;
+padding:10px;
+transition:0.3s;
+text-decoration:none;
+
+color:white;
+}
+.category-name a:hover
+{
+background-color:grey;
+}
+
+.description
+{
+letter-spacing:1px;
+font-family:Roboto;
+font-size:15px;
+}
+.boxes
+{
+width:100%;
+padding:10px;
+background-color:#F7F6E5
+}
+.cartbutton
+{
+transition: 0.3s;
+color:white;
+padding:10px 20px;
+border: solid;
+background-color:rgb(5, 0, 0);
+font-size:16px;
+cursor:pointer;
+}
+.cartbutton:hover
+{
+background-color: white;
+color:black;
+}
+
+
+
+
+
